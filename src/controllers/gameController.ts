@@ -62,6 +62,7 @@ export const addAllgames = (req: Request, res: Response) => {
 
   console.log("addAllGames called");
 
+
   // for (const item of req.body) {
   //   console.log(item);
   // }
@@ -73,4 +74,5 @@ export const addAllgames = (req: Request, res: Response) => {
       res.send(game);
     }
   });
+
 };
