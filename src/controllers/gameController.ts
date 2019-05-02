@@ -61,12 +61,18 @@ export const addgame = (req: Request, res: Response) => {
 export const addAllgames = (req: Request, res: Response) => {
 
   console.log("addAllGames called");
-  console.log("req body : " + req.body);
-  // Game.insertMany(req.body, function(err: any, game: any) {
-  //   if(err) {
-  //     res.send(err);
-  //   } else {
-  //     res.send(game);
-  //   }
-  // });
+
+
+  // for (const item of req.body) {
+  //   console.log(item);
+  // }
+
+  Game.insertMany(req.body, {ordered: false}, (err: any, game: any) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(game);
+    }
+  });
+
 };
